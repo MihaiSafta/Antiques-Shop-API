@@ -52,6 +52,28 @@ public void testGetProduct_whenExistingEntity_thenReturnProduct() {
 public void testGetProduct_whenNonExistingEntity_thenTrowNotFoundException(){
         productService.getProduct(99999);
 }
+@Test
+private void updateProduct_whenValidRequest_thenReturnUpdateProduct(){
+    Product createdProduct = createProduct();
+    SaveProductRequest request = new SaveProductRequest();
+    request.setName(createdProduct.getName() + "Updated");
+    request.setPrice(createdProduct.getPrice() + 10);
+    request.setQuantity(createdProduct.getQuantity() + 10);
+
+    Product updatedProduct = productService.updateProduct(createdProduct.getId(), request);
+    assertThat(updatedProduct, notNullValue());
+    assertThat(updatedProduct.getId(), greaterThan(0L));
+    assertThat(updatedProduct.getId(), is(createdProduct.getId()));
+    assertThat(updatedProduct.getPrice(), is(request.getPrice()));
+    assertThat(updatedProduct.getName(),is(request.getName()));
+    assertThat(updatedProduct.getQuantity(), is(request.getQuantity()));
+
+
+}
+
+
+
+
     private Product createProduct() {
         SaveProductRequest request = new SaveProductRequest();
         request.setName("Computer");
