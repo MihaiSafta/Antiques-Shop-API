@@ -36,8 +36,8 @@ public class ProductService {
     public Product getProduct(long id){
         LOGGER.info("Retrieving product {}", id);
         //using optional
-     return productRepository.findById(id);
+     return productRepository.findById(id)
         //lambda expressions
-        .orElseTrow(() -> new ResourceNotFoundException("Product " + id + "not found"));
+        .orElseThrow(() -> new ResourceNotFoundException("Product " + id + "not found"));
     }
 }
