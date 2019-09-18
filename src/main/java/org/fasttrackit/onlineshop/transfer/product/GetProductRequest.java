@@ -15,10 +15,10 @@ public class GetProductRequest {
     }
 
     public Integer getMinimumQuantity() {
-        return minimumQuantity;
+        Integer minimumQuantity;
     }
 
-    public void setMinimumQuantity(Integer minimumQuantity) {
+    public void setMinimumQuantity(int minimumQuantity) {
         this.minimumQuantity = minimumQuantity;
     }
 
