@@ -20,10 +20,8 @@ public class Cart {
     private Set<Product> products = new HashSet<>();
 
     public void addToCart(Product product){
-        //adding reveived product to current cart
         products.add(product);
 
-        //associating current cart with the received product
         product.getCarts().add(this);
     }
     public  void removeFromCart(Product product){

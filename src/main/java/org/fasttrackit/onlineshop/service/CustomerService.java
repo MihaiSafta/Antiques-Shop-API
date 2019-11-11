@@ -14,9 +14,7 @@ import org.springframework.stereotype.Service;
 public class CustomerService {
     private static final Logger LOGGER = LoggerFactory.getLogger(CustomerService.class);
 
-    // IoC - inversion of Control
     private final CustomerRepository customerRepository;
-    // dependency injection
     @Autowired
     public CustomerService(CustomerRepository customerRepository) {
         this.customerRepository = customerRepository;
@@ -33,9 +31,7 @@ public class CustomerService {
     }
     public Customer getCustomer(long id){
         LOGGER.info("Retrieving customer {}", id);
-        //using optional
      return customerRepository.findById(id)
-        //lambda expressions
         .orElseThrow(() -> new ResourceNotFoundException("Customer " + id + "not found"));
     }
 

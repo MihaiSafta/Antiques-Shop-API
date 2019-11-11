@@ -3,9 +3,9 @@ package org.fasttrackit.onlineshop.service;
 import org.fasttrackit.onlineshop.domain.Product;
 import org.fasttrackit.onlineshop.exception.ResourceNotFoundException;
 import org.fasttrackit.onlineshop.persistance.ProductRepository;
-import org.fasttrackit.onlineshop.transfer.product.GetProductRequest;
-import org.fasttrackit.onlineshop.transfer.product.ProductResponse;
-import org.fasttrackit.onlineshop.transfer.product.SaveProductRequest;
+import org.fasttrackit.onlineshop.transfer.product.product.GetProductRequest;
+import org.fasttrackit.onlineshop.transfer.product.product.ProductResponse;
+import org.fasttrackit.onlineshop.transfer.product.product.SaveProductRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
@@ -23,9 +23,7 @@ import java.util.List;
 public class ProductService {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProductService.class);
 
-    // IoC - inversion of Control
     private final ProductRepository productRepository;
-    // dependency injection
     @Autowired
     public ProductService(ProductRepository productRepository) {
         this.productRepository = productRepository;
@@ -45,9 +43,7 @@ public class ProductService {
     }
     public Product getProduct(long id){
         LOGGER.info("Retrieving product {}", id);
-        //using optional
      return productRepository.findById(id)
-        //lambda expressions
         .orElseThrow(() -> new ResourceNotFoundException("Product " + id + "not found"));
     }
     @Transactional

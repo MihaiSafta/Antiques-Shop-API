@@ -4,7 +4,7 @@ import org.fasttrackit.onlineshop.domain.Product;
 import org.fasttrackit.onlineshop.exception.ResourceNotFoundException;
 import org.fasttrackit.onlineshop.service.ProductService;
 import org.fasttrackit.onlineshop.steps.ProductSteps;
-import org.fasttrackit.onlineshop.transfer.product.SaveProductRequest;
+import org.fasttrackit.onlineshop.transfer.product.product.SaveProductRequest;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

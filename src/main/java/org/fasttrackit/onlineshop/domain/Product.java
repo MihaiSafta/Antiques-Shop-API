@@ -11,7 +11,7 @@ import java.util.Set;
 @Entity
 public class Product {
     @Id
-    @GeneratedValue //adnotarile se aplica doar la elementul urmator
+    @GeneratedValue
     private long id;
 
     @NotNull

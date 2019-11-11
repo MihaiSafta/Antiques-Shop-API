@@ -1,4 +1,4 @@
-package org.fasttrackit.onlineshop.transfer.product;
+package org.fasttrackit.onlineshop.transfer.product.product;
 
 import javax.validation.constraints.NotNull;
 

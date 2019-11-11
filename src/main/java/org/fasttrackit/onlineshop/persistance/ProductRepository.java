@@ -12,8 +12,6 @@ public interface ProductRepository extends JpaRepository<Product,Long> {
     Page<Product> findByNameContaining(String partialName, Pageable pageable);
 
     Page<Product> findByNameContainingAndQuantityGreaterThanEqual(String partialName, int minimumQuantity, Pageable pageable);
-    //jpql syntax, java persistence query language
-    //named query
     @Query("SELECT product FROM Product product WHERE name LIKE ':partialName'")
     List<Product>  findByPartialName(String partialName);
 

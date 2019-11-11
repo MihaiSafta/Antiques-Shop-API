@@ -2,7 +2,7 @@ package org.fasttrackit.onlineshop.steps;
 
 import org.fasttrackit.onlineshop.domain.Product;
 import org.fasttrackit.onlineshop.service.ProductService;
-import org.fasttrackit.onlineshop.transfer.product.SaveProductRequest;
+import org.fasttrackit.onlineshop.transfer.product.product.SaveProductRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -21,10 +21,10 @@ public class ProductSteps {
 
     public Product createProduct() {
         SaveProductRequest request = new SaveProductRequest();
-        request.setName("Computer");
-        request.setDescription("Some description");
+        request.setName("Schauffasen");
+        request.setDescription("GoldenBoy");
         request.setPrice(2000);
-        request.setQuantity(100);
+        request.setQuantity(1);
 
         Product product = productService.createProduct(request);
         assertThat(product, notNullValue());
