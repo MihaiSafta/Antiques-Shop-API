@@ -28,6 +28,8 @@ public class CartController {
         return new ResponseEntity(HttpStatus.NO_CONTENT);
     }
 
+    public ResponseEntity deleteProductFromCart()
+
     @GetMapping("/{id}")
 public ResponseEntity<CartResponse>getCart(@PathVariable("id") long customerId){
 
